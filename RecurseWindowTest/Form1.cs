@@ -17,6 +17,7 @@ namespace RecurseWindowTest
             Text = $"{Size.Width}x{Size.Height}";
             if (mode == 2)
                 new Form1(iter_num+1, mode).ShowDialog();
+            DateTime.Parse("17:30");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -33,8 +34,10 @@ namespace RecurseWindowTest
                     e.Cancel = true;
                     break;
                 default:
-                    if (Size.Width < 300)
-                        Application.Exit();
+                    if (Size.Width < 250)
+                        Environment.Exit(0);
+                    else
+                        e.Cancel = true;
                     /*else
                         new Form1(iter_num + 1, mode).ShowDialog();*/
                     break;
